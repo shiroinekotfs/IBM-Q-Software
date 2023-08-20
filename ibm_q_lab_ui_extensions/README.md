@@ -1,3 +1,5 @@
+[![CodeQL](https://github.com/takinekotfs/IBM-Q-Software/actions/workflows/codeql.yml/badge.svg)](https://github.com/takinekotfs/IBM-Q-Software/actions/workflows/codeql.yml)
+
 Quantum lab jupyter extensions
 
 ## Requirements
