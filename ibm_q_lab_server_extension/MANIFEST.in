@@ -1,0 +1,7 @@
+include ibm_q_lab_server_extension/labextension/package.json
+include ibm_q_lab_server_extension/labextension/static/138.cc3f2542e28369ae594d.js
+include ibm_q_lab_server_extension/labextension/static/688.09e8a1383c921569f1e2.js
+include ibm_q_lab_server_extension/labextension/static/remoteEntry.871a75001a3d57b3df97.js
+include ibm_q_lab_server_extension/labextension/static/style.js
+include ibm_q_lab_server_extension/labextension/static/third-party-licenses.json
+include README.md LICENSE

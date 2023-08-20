@@ -1,0 +1,80 @@
+{
+    "name": "@quantum/lab-server",
+    "version": "4.0.28",
+    "description": "Server handlers",
+    "keywords": [
+        "jupyter",
+        "jupyterlab",
+        "jupyterlab-extension"
+    ],
+    "homepage": "https://github.ibm.com/IBM-Q-Software/ibmq-jupyterlab-extensions",
+    "bugs": {
+        "url": "https://github.ibm.com/IBM-Q-Software/ibmq-jupyterlab-extensions/issues"
+    },
+    "license": "BSD-3-Clause",
+    "author": {
+        "name": "IBM Research",
+        "email": "info@ibm.com"
+    },
+    "files": [
+        "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
+        "style/**/*.{css,.js,eot,gif,html,jpg,json,png,svg,woff2,ttf}"
+    ],
+    "main": "src/index.ts",
+    "style": "style/index.css",
+    "repository": {
+        "type": "git",
+        "url": "https://github.ibm.com/IBM-Q-Software/ibmq-jupyterlab-extensions.git"
+    },
+    "scripts": {
+        "build": "webpack --mode production",
+        "dev": "webpack --mode development --watch",
+        "lint": "eslint -c .eslintrc.js --ext .ts,.tsx .",
+        "typecheck": "tsc --noEmit",
+        "pkg": "cd python && rm -rf dist build ibm_q_lab_server_extension.egg-info && python setup.py bdist_wheel",
+        "clean": "rimraf python/build python/dist python/ibm_q_lab_server_extension.egg-info python/ibm_q_lab_server_extension/labextension"
+    },
+    "dependencies": {
+        "@jupyterlab/application": "^3.4.7",
+        "@jupyterlab/coreutils": "^5.0.0",
+        "@jupyterlab/services": "^6.0.0"
+    },
+    "devDependencies": {
+        "@quantum/lab-builder": "workspace:*",
+        "@typescript-eslint/eslint-plugin": "^5.40.1",
+        "@typescript-eslint/parser": "^5.40.1",
+        "eslint": "^8.25.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "mkdirp": "^1.0.3",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.1.1",
+        "rimraf": "^3.0.2",
+        "typescript": "^4.8.4",
+        "webpack": "^5.41.1",
+        "webpack-merge": "^5.8.0"
+    },
+    "sideEffects": [
+        "style/*.css"
+    ],
+    "styleModule": "style/index.css",
+    "jupyterlab": {
+        "discovery": {
+            "server": {
+                "managers": [
+                    "pip"
+                ],
+                "base": {
+                    "name": "ibm_q_lab_server_extension"
+                }
+            }
+        },
+        "extension": true,
+        "outputDir": "python/ibm_q_lab_server_extension/labextension",
+        "_build": {
+            "load": "static/remoteEntry.871a75001a3d57b3df97.js",
+            "extension": "./extension",
+            "style": "./style"
+        }
+    }
+}

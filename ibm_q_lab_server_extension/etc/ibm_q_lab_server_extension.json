@@ -1,0 +1,7 @@
+{
+  "ServerApp": {
+    "jpserver_extensions": {
+      "ibm_q_lab_server_extension": true
+    }
+  }
+}
