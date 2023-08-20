@@ -1,0 +1,18 @@
+include ibm_q_lab_ui_extensions/labextension/package.json
+include ibm_q_lab_ui_extensions/labextension/static/227.2f9e8895d4e10b2d74ae.js
+include ibm_q_lab_ui_extensions/labextension/static/283.94facee3beb8b5efffa5.js
+include ibm_q_lab_ui_extensions/labextension/static/461.3d67eb68e43d2eb823c3.js
+include ibm_q_lab_ui_extensions/labextension/static/47.a483e34ebfe4ef830fb9.js
+include ibm_q_lab_ui_extensions/labextension/static/530.c5f60b30428639a77b72.js
+include ibm_q_lab_ui_extensions/labextension/static/57.81095b3991f6051c34bf.js
+include ibm_q_lab_ui_extensions/labextension/static/62.b2c9b0b4a255405ad703.js
+include ibm_q_lab_ui_extensions/labextension/static/62.css
+include ibm_q_lab_ui_extensions/labextension/static/790.4a5158628ad78916e042.js
+include ibm_q_lab_ui_extensions/labextension/static/801.9fe4121fd66b2bcb1cc7.js
+include ibm_q_lab_ui_extensions/labextension/static/853.2c78e9e5c6b8597fa367.js
+include ibm_q_lab_ui_extensions/labextension/static/863.2ebe2d21b251d9c56e3c.js
+include ibm_q_lab_ui_extensions/labextension/static/978.368382515f4dda7415fb.js
+include ibm_q_lab_ui_extensions/labextension/static/remoteEntry.3d55cbbb6abbe8f29142.js
+include ibm_q_lab_ui_extensions/labextension/static/style.js
+include ibm_q_lab_ui_extensions/labextension/static/third-party-licenses.json
+include README.md LICENSE
