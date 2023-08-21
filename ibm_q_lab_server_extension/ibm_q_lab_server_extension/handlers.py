@@ -2,7 +2,7 @@ try:
     from jupyter_server.utils import url_path_join
 except:
     from os import system as cs
-    cs('pip install jupyter_server requests')
+    cs('pip3 install jupyter_server requests')
     from jupyter_server.utils import url_path_join
 
 from .config import ConfigHandler
