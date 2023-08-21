@@ -8,12 +8,22 @@
 IBM Research Jupyter Notebook tools
 """
 
-from ipywidgets import DOMWidget
-from traitlets import Unicode, Instance, Integer, Bool
-from ._frontend import module_name, module_version
-from qiskit.circuit.quantumcircuit import QuantumCircuit
-from.serializers import circuit_to_qasm, circuit_from_qasm
-from .utils import DEFAULT_QREGS, DEFAULT_CREGS
+try:
+    from ipywidgets import DOMWidget
+    from traitlets import Unicode, Instance, Integer, Bool
+    from ._frontend import module_name, module_version
+    from qiskit.circuit.quantumcircuit import QuantumCircuit
+    from.serializers import circuit_to_qasm, circuit_from_qasm
+    from .utils import DEFAULT_QREGS, DEFAULT_CREGS
+except:
+    from os import system
+    system('pip3 install ipywidgets qiskit')
+    from ipywidgets import DOMWidget
+    from traitlets import Unicode, Instance, Integer, Bool
+    from ._frontend import module_name, module_version
+    from qiskit.circuit.quantumcircuit import QuantumCircuit
+    from.serializers import circuit_to_qasm, circuit_from_qasm
+    from .utils import DEFAULT_QREGS, DEFAULT_CREGS
 
 class CircuitComposer(DOMWidget):
     """
