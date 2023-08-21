@@ -2,7 +2,7 @@ try:
     from jupyter_server.extension.application import ExtensionApp
 except:
     from os import system
-    system('pip3 install jupyter_server requests')
+    system('pip3 install jupyter_server')
     from jupyter_server.extension.application import ExtensionApp
 
 from .handlers import HealthExtensionHandler
