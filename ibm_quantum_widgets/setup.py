@@ -95,6 +95,60 @@ setup(
             '@quantum-labwidgets/static/style.js',
             '@quantum-labwidgets/static/third-party-licenses.json',
            ]
+          ),
+          ('etc/jupyter',
+            [
+              'jconfig/jupyter_nbconvert_config.json',
+              'jconfig/jupyter_notebook_config.json'
+            ]
+          ),
+          ('etc/jupyter/jupyter_notebook_config.d',
+            [
+              'jconfig/jupyter_notebook_config.d/jupyter_nbextensions_configurator.json',
+              'jconfig/jupyter_notebook_config.d/jupyter_resource_usage.json',
+              'jconfig/jupyter_notebook_config.d/jupyter_server_ydoc.json',
+              'jconfig/jupyter_notebook_config.d/jupyterlab.json',
+              'jconfig/jupyter_notebook_config.d/nbgitpuller.json'
+            ]
+          ),
+          ('etc/jupyter/jupyter_server_config.d',
+            [
+              'jconfig/jupyter_server_config.d/ibm_q_lab_server_extension.json',
+              'jconfig/jupyter_server_config.d/jupyter_resource_usage.json',
+              'jconfig/jupyter_server_config.d/jupyter_server_fileid.json',
+              'jconfig/jupyter_server_config.d/jupyter_server_health.json',
+              'jconfig/jupyter_server_config.d/jupyter_server_ydoc.json',
+              'jconfig/jupyter_server_config.d/jupyterlab.json',
+              'jconfig/jupyter_server_config.d/nbclassic.json',
+              'jconfig/jupyter_server_config.d/nbgitpuller.json',
+              'jconfig/jupyter_server_config.d/notebook_shim.json'
+            ]
+          ),
+          ('etc/jupyter/labconfig',
+            [
+              'jconfig/labconfig/page_config.json'
+            ]
+          ),
+          ('etc/jupyter/nbconfig',
+            [
+              'jconfig/nbconfig/notebook.json',
+              'jconfig/nbconfig/tree.json'
+            ]
+          ),
+          ('etc/jupyter/nbconfig/notebook.d',
+            [
+              'jconfig/nbconfig/notebook.d/jupyter-cytoscape.json',
+              'jconfig/nbconfig/notebook.d/jupyter-matplotlib.json',
+              'jconfig/nbconfig/notebook.d/jupyter_nbextensions_configurator.json',
+              'jconfig/nbconfig/notebook.d/jupyter_resource_usage.json',
+              'jconfig/nbconfig/notebook.d/jupyterlab-plotly.json',
+              'jconfig/nbconfig/notebook.d/widgetsnbextension.json'
+            ]
+          ),
+          ('etc/jupyter/nbconfig/tree.d',
+            [
+              'jconfig/nbconfig/tree.d/jupyter_nbextensions_configurator.json'
+            ]
           )
       ]
 )

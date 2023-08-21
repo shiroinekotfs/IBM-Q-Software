@@ -1,0 +1,13 @@
+{
+  "disabledExtensions": {
+      "@jupyterlab/application-extension:logo": true,
+      "@jupyterlab/application-extension:property-inspector": true,
+      "@jupyterlab/toc": true,
+      "@jupyterlab/theme-dark-extension": true,
+      "@jupyterlab/theme-light-extension": true,
+      "@jupyterlab/extensionmanager-extension": true,
+      "@jupyterlab/filebrowser-extension:share-file": true,
+      "@jupyterlab/apputils-extension:splash": true
+  },
+  "terminalsAvailable": false	
+}
