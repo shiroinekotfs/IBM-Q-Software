@@ -399,12 +399,12 @@
                 });
 
             function V(g, m) {
-                const l = m ? .ibmQNetwork ? g.apiNetworkUrl : g.apiIbmQXUrl,
+                const l = m?.ibmQNetwork ? g.apiNetworkUrl : g.apiIbmQXUrl,
                     e = p(D.createConnection({
                         name: "IBMQ",
                         baseURL: l,
                         headers: {
-                            [S]: m ? .token
+                            [S]: m?.token
                         }
                     })),
                     A = D.createConnection({
@@ -434,7 +434,7 @@
                     async getGlobalToc(A) {
                         const _ = await this.getPage({
                             path: "toc",
-                            baseURL: A ? .baseURL
+                            baseURL: A?.baseURL
                         });
                         if ((0, G.l0)(_)) return (0, L.Z)(_.tocs)
                     },
@@ -506,7 +506,7 @@
                         name: "User",
                         baseURL: l,
                         headers: {
-                            [S]: m ? .token
+                            [S]: m?.token
                         }
                     }));
                 return {
@@ -530,7 +530,7 @@
                     name: "Network",
                     baseURL: g.apiNetworkUrl,
                     headers: {
-                        [S]: m ? .token
+                        [S]: m?.token
                     }
                 }));
                 return {
@@ -594,15 +594,15 @@
             function be(g, m) {
                 const l = p(D.createConnection({
                         name: "Runtime",
-                        baseURL: m.urls ? .services.runtime ? ? g.apiRuntimeUrl,
-                        headers: m ? .token ? {
-                            [S]: m ? .token
+                        baseURL: m.urls?.services.runtime ?? g.apiRuntimeUrl,
+                        headers: m?.token ? {
+                            [S]: m?.token
                         } : {}
                     })),
                     e = p(D.createConnection({
                         baseURL: g.apiNetworkUrl,
-                        headers: m ? .token ? {
-                            [S]: m ? .token
+                        headers: m?.token ? {
+                            [S]: m?.token
                         } : {}
                     }));
                 return {
@@ -651,7 +651,7 @@
                 i = s(77099);
 
             function w() {
-                return (0, d.v9)(i.zj) ? .accessToken ? ? null
+                return (0, d.v9)(i.zj)?.accessToken ?? null
             }
         },
         94417: (U, I, s) => {
@@ -817,9 +817,9 @@
             function b() {
                 const [E] = (0, w.r)(), {
                     themeName: v
-                } = (0, d.useContext)(N.N), D = v ? ? (0, o.v1)(E), [O, p] = (0, d.useState)(D), [S, Q] = (0, d.useState)(x.np[D]);
+                } = (0, d.useContext)(N.N), D = v ?? (0, o.v1)(E), [O, p] = (0, d.useState)(D), [S, Q] = (0, d.useState)(x.np[D]);
                 return (0, d.useEffect)(() => {
-                    p(v ? ? (0, o.v1)(E))
+                    p(v ?? (0, o.v1)(E))
                 }, [v, E]), (0, d.useEffect)(() => {
                     Q(x.np[O])
                 }, [O]), {
@@ -954,9 +954,9 @@
                 E && S.push(`theme-${E}`), v && S.push("theme-inverse"), D && S.push("theme-variant");
                 const {
                     themeName: Q
-                } = (0, N.F)(), [Z, Y] = (0, i.useState)(E ? ? Q), [B, j] = (0, i.useState)(d.np[E ? ? Q]);
+                } = (0, N.F)(), [Z, Y] = (0, i.useState)(E ?? Q), [B, j] = (0, i.useState)(d.np[E ?? Q]);
                 return (0, i.useEffect)(() => {
-                    let V = E ? ? Q;
+                    let V = E ?? Q;
                     v && (V = (0, d.H2)(E)), D && (V = (0, d.vn)(E)), Y(V)
                 }, [E, Q]), (0, i.useEffect)(() => {
                     j(d.np[Z])
@@ -993,9 +993,9 @@
                 const D = {
                         composerFilesNew(p) {
                             const S = {
-                                ...p ? .query
+                                ...p?.query
                             };
-                            return p ? .initial && (S.initial = (0, d.compressToEncodedURIComponent)(JSON.stringify(p.initial))), O.composerFilesId({
+                            return p?.initial && (S.initial = (0, d.compressToEncodedURIComponent)(JSON.stringify(p.initial))), O.composerFilesId({
                                 id: "new"
                             }, {
                                 query: S
@@ -1042,7 +1042,7 @@
                         docs(p = {}, S = {
                             query: {}
                         }) {
-                            return v("docs", p.path ? ? "") + o(S.query)
+                            return v("docs", p.path ?? "") + o(S.query)
                         },
                         composerDocs(p = {}, S = {
                             query: {}
@@ -1265,7 +1265,7 @@
             }
 
             function i(E) {
-                return E.environment ? .accessToken ? ? null
+                return E.environment?.accessToken ?? null
             }
 
             function w(E) {
@@ -1334,31 +1334,26 @@
 
             function x(t) {
                 switch (t.type) {
-                    case "Page":
-                        {
-                            window.bluemixAnalytics ? .pageEvent(t.app, t.route, t.info);
-                            return
-                        }
-                    case "CTA Clicked":
-                        {
-                            window.bluemixAnalytics ? .trackEvent("CTA Clicked", t.info);
-                            break
-                        }
-                    case "Started Process":
-                        {
-                            window.bluemixAnalytics ? .trackEvent("Started Process", t.info);
-                            return
-                        }
-                    case "Ended Process":
-                        {
-                            window.bluemixAnalytics ? .trackEvent("Ended Process", t.info);
-                            return
-                        }
-                    case "Identify":
-                        {
-                            window.analytics ? .identify(t.realm, t.info);
-                            return
-                        }
+                    case "Page": {
+                        window.bluemixAnalytics?.pageEvent(t.app, t.route, t.info);
+                        return
+                    }
+                    case "CTA Clicked": {
+                        window.bluemixAnalytics?.trackEvent("CTA Clicked", t.info);
+                        break
+                    }
+                    case "Started Process": {
+                        window.bluemixAnalytics?.trackEvent("Started Process", t.info);
+                        return
+                    }
+                    case "Ended Process": {
+                        window.bluemixAnalytics?.trackEvent("Ended Process", t.info);
+                        return
+                    }
+                    case "Identify": {
+                        window.analytics?.identify(t.realm, t.info);
+                        return
+                    }
                 }
             }
 
@@ -1445,7 +1440,7 @@
                     this.trackEvent(r)
                 }
                 get analyticsRoute() {
-                    return this.router ? .current ? .path || "/lab"
+                    return this.router?.current?.path || "/lab"
                 }
                 trackButtonEvent(n) {
                     const {
@@ -1526,9 +1521,9 @@
                     const {
                         user: r,
                         environment: c
-                    } = a.getState(), u = new b(r ? .id, n, c);
+                    } = a.getState(), u = new b(r?.id, n, c);
                     u.initialize(), O(a, p.PR, h => {
-                        u.setUserId(h ? .id)
+                        u.setUserId(h?.id)
                     }), Q(t), Z(t, u), B(t, n)
                 }
             };
@@ -1615,7 +1610,7 @@
                 }
                 setAccountType(n) {
                     const a = [];
-                    (n ? ? []).forEach(c => {
+                    (n ?? []).forEach(c => {
                         (0, ae.Z)(c.groups).forEach(h => {
                             a.push(`${c.name}/${h}`)
                         })
@@ -1630,7 +1625,7 @@
                     this.trigger1 = n
                 }
                 setUserData(n) {
-                    this.userId = n ? .id, this.email = n ? .emailVerified ? n ? .email ? ? "" : "", this.firstName = n ? .firstName, this.lastName = n ? .lastName, this.customerName = `${this.firstName??""} ${this.lastName??""}`
+                    this.userId = n?.id, this.email = n?.emailVerified ? n?.email ?? "" : "", this.firstName = n?.firstName, this.lastName = n?.lastName, this.customerName = `${this.firstName??""} ${this.lastName??""}`
                 }
                 isFeedbackEnable() {
                     return X(this.environment) && !!this.environment.medalliaScript
@@ -1722,7 +1717,7 @@
                 n.addCommand(V.showFeedbackModal, {
                     isEnabled: () => !0,
                     isVisible: () => !0,
-                    execute: async() => {
+                    execute: async () => {
                         try {
                             await H(() => !!window.KAMPYLE_ONSITE_SDK, {
                                 timeout: 3e4
@@ -1741,7 +1736,7 @@
                     isEnabled: () => !0,
                     isVisible: () => !1,
                     execute: () => {
-                        window.KAMPYLE_ONSITE_SDK ? .updatePageView && window.KAMPYLE_ONSITE_SDK.updatePageView()
+                        window.KAMPYLE_ONSITE_SDK?.updatePageView && window.KAMPYLE_ONSITE_SDK.updatePageView()
                     }
                 })
             }
@@ -1805,8 +1800,8 @@
             function Ee(t, n) {
                 const a = {
                     token: t.accessToken,
-                    ibmQNetwork: n ? .ibmQNetwork ? ? !1,
-                    urls: n ? .urls
+                    ibmQNetwork: n?.ibmQNetwork ?? !1,
+                    urls: n?.urls
                 };
                 return (0, Qe.U)(t, a)
             }
@@ -1938,38 +1933,31 @@
                 switch (n.type) {
                     case ne.pe:
                         return {
-                            ...t,
-                            user: n.payload
+                            ...t, user: n.payload
                         };
                     case ne.Pc:
                         return {
-                            ...t,
-                            environment: n.payload
+                            ...t, environment: n.payload
                         };
                     case ne.L9:
                         return {
-                            ...t,
-                            networkData: n.payload
+                            ...t, networkData: n.payload
                         };
                     case ne.fe:
                         return {
-                            ...t,
-                            hasResultsData: n.payload
+                            ...t, hasResultsData: n.payload
                         };
                     case ne.sv:
                         return {
-                            ...t,
-                            docPath: n.payload
+                            ...t, docPath: n.payload
                         };
                     case ne.Dv:
                         return {
-                            ...t,
-                            notifications: [...t.notifications, n.payload]
+                            ...t, notifications: [...t.notifications, n.payload]
                         };
                     case ne.BD:
                         return {
-                            ...t,
-                            notifications: t.notifications.filter(a => a.id !== n.payload)
+                            ...t, notifications: t.notifications.filter(a => a.id !== n.payload)
                         };
                     default:
                         return t
@@ -2030,7 +2018,7 @@
             }
 
             function je(t, n) {
-                if (t ? .response ? .status === 401)
+                if (t?.response?.status === 401)
                     if (n) {
                         const a = (0, Ke.sQ)(n);
                         Ne(a.iqx.loginLab())
@@ -2041,7 +2029,7 @@
                 id: `${g}:store-plugin`,
                 autoStart: !0,
                 provides: v,
-                activate: async() => {
+                activate: async () => {
                     const t = (0, Fe.MT)(qe),
                         n = await $e("ibm_q_lab_config_extension", "config_data"),
                         a = Xe(n);
@@ -2079,7 +2067,7 @@
             }) {
                 return (0, ye.a)() ? e().createElement(e().Fragment, null, t) : e().createElement(e().Fragment, null)
             }
-            const Ot = e().lazy(async() => ({
+            const Ot = e().lazy(async () => ({
                     default: (await s.e(283).then(s.bind(s, 85283))).DocsPanel
                 })),
                 Rt = new ee.QueryClient;
@@ -2145,7 +2133,7 @@
                 };
             var Oe = s(37073);
             const Bt = new ee.QueryClient,
-                Ht = e().lazy(async() => ({
+                Ht = e().lazy(async () => ({
                     default: (await Promise.all([s.e(461), s.e(863)]).then(s.bind(s, 69863))).DocsPage
                 }));
             class Wt extends m.ReactWidget {
@@ -2217,7 +2205,7 @@
             }
 
             function Re(t) {
-                return t ? .content.id ? ? t.id
+                return t?.content.id ?? t.id
             }
 
             function zt(t, n) {
@@ -2266,7 +2254,7 @@
                                 path: C
                             } = f, M = ht;
                             let k = pt(t, M, "main");
-                            if (k) k ? .content ? .path !== C && (k.content.path = C, k.content.scrollToTop(), k.update());
+                            if (k) k?.content?.path !== C && (k.content.path = C, k.content.scrollToTop(), k.update());
                             else {
                                 const T = new Wt({
                                     id: M,
@@ -2323,7 +2311,7 @@
                     }
                 }, n)
             }
-            const Yt = e().lazy(async() => ({
+            const Yt = e().lazy(async () => ({
                     default: (await Promise.all([s.e(853), s.e(790), s.e(801)]).then(s.bind(s, 9801))).LiveDataPage
                 })),
                 qt = new ee.QueryClient;
@@ -2600,7 +2588,7 @@
                 return C.on("tooltipNotification:show", T => {
                     if (T.container !== n) return;
                     h.clear(), u(T.tooltip);
-                    const W = T.options ? .duration ? ? pn()("5s");
+                    const W = T.options?.duration ?? pn()("5s");
                     W > 0 && h.set(() => {
                         u(null)
                     }, W)
@@ -2618,7 +2606,7 @@
                     onClick: () => k()
                 }, c.text))
             }
-            const gn = e().lazy(async() => ({
+            const gn = e().lazy(async () => ({
                     default: (await Promise.all([s.e(853), s.e(47), s.e(530)]).then(s.bind(s, 59530))).JobPanel
                 })),
                 fn = new ee.QueryClient;
@@ -2692,8 +2680,7 @@
                 bn = s(3313),
                 In = s.n(bn);
             const Nn = (() => ({
-                    qiskitImports: [In()
-                        `
+                    qiskitImports: [In()`
     # Importing standard Qiskit libraries
     from qiskit import QuantumCircuit, transpile
     from qiskit.tools.jupyter import *
@@ -2709,8 +2696,7 @@
 
     # Invoke a primitive. For more details see https://qiskit.org/documentation/partners/qiskit_ibm_runtime/tutorials.html
     # result = Sampler("ibmq_qasm_simulator").run(circuits).result()
-  `
-                    ]
+  `]
                 }))(),
                 nt = "ibm-q-lab-notebooks-extension";
             var re;
@@ -2725,10 +2711,10 @@
                     const {
                         commands: c,
                         serviceManager: u
-                    } = t, h = u.kernelspecs.specs.default, y = u.kernelspecs.specs.kernelspecs[h].display_name, f = async(M, k) => {
+                    } = t, h = u.kernelspecs.specs.default, y = u.kernelspecs.specs.kernelspecs[h].display_name, f = async (M, k) => {
                         const T = await c.execute("notebook:create-new", k);
                         return C(T, M), T
-                    }, C = async(M, k) => {
+                    }, C = async (M, k) => {
                         M.sessionContext.isReady || await M.sessionContext.ready;
                         const T = M.content;
                         for (const z of k) T.activeCell.model.value.text = z, ft.NotebookActions.insertBelow(T);
@@ -2766,7 +2752,7 @@
                             restored: c
                         } = t;
                     let u;
-                    const h = new Cn.eD(async() => {
+                    const h = new Cn.eD(async () => {
                         if (!u) {
                             u = new m.Dialog({
                                 title: a.__("Loading..."),
@@ -2793,9 +2779,9 @@ Would you like to clear the workspace or keep waiting?`),
                     let y = 0;
                     const f = document.getElementById(wt);
                     return f || console.error(`${at}: splash not found.`), {
-                        show: () => f ? (f.classList.remove("custom-splash-fade-out", "custom-splash-hidden"), y++, h.invoke().catch(C => {}), new st.DisposableDelegate(async() => {
+                        show: () => f ? (f.classList.remove("custom-splash-fade-out", "custom-splash-hidden"), y++, h.invoke().catch(C => {}), new st.DisposableDelegate(async () => {
                             await c, --y === 0 && (h.stop(), u && (u.dispose(), u = null), kn(f))
-                        })) : (console.warn(`${at}: splash not provided. Nothing to do`), new st.DisposableDelegate(async() => {}))
+                        })) : (console.warn(`${at}: splash not provided. Nothing to do`), new st.DisposableDelegate(async () => {}))
                     }
                 }
             };
@@ -2832,7 +2818,7 @@ Would you like to clear the workspace or keep waiting?`),
 
             function Mt(t) {
                 const n = (0, jn.m)();
-                return (0, ee.useQuery)(["doc/search", t], async() => !t || t.trim().length === 0 ? null : await n.Documentation.search({
+                return (0, ee.useQuery)(["doc/search", t], async () => !t || t.trim().length === 0 ? null : await n.Documentation.search({
                     query: encodeURIComponent(t)
                 }))
             }
@@ -3433,11 +3419,11 @@ Would you like to clear the workspace or keep waiting?`),
                     }
                     switch (h) {
                         case "resultsdb":
-                            return !!u.urls ? .services.resultsDB;
+                            return !!u.urls?.services.resultsDB;
                         case "runtime":
-                            return !!u.urls ? .services.runtime;
+                            return !!u.urls?.services.runtime;
                         case "administration":
-                            return (0, Tt.Z)(u.roles, "admin") || (0, Gn.Z)(u.qNetworkRoles ? ? [], ["hub-admin", "group-admin"]).length > 0;
+                            return (0, Tt.Z)(u.roles, "admin") || (0, Gn.Z)(u.qNetworkRoles ?? [], ["hub-admin", "group-admin"]).length > 0;
                         case "challenges":
                         case "researchers-program":
                         case "educators-program":
@@ -3992,7 +3978,7 @@ Would you like to clear the workspace or keep waiting?`),
                     return this._output
                 }
                 execute(n) {
-                    !this._sessionContext || !this._sessionContext.session ? .kernel || (this.future = this._sessionContext.session ? .kernel ? .requestExecute({
+                    !this._sessionContext || !this._sessionContext.session?.kernel || (this.future = this._sessionContext.session?.kernel?.requestExecute({
                         code: n
                     }))
                 }
@@ -4000,32 +3986,31 @@ Would you like to clear the workspace or keep waiting?`),
             const ps = "ibm-q-lab-background-run-extension";
             class hs {
                 createNew(n, a) {
-                    const r = async() => {
-                            const u = i.PageConfig.getOption("serverRoot"),
-                                h = a.path,
-                                y = `${a.path.split(".ipynb")[0]}-background-results.ipynb`;
-                            try {
-                                if (await a.save(), !n.sessionContext.session ? .kernel) {
-                                    (0, m.showErrorMessage)("Error", "Please select a kernel and try again!");
-                                    return
-                                }
-                                const f = new ds(n.sessionContext);
-                                (0, m.showDialog)({
-                                    body: `Running the notebook in the background. Check the results when it ends in ${y}`,
-                                    buttons: [m.Dialog.okButton()]
-                                }), f.execute(`!papermill ${u}/${h} ${u}/${y}`), await f.future.done, String(Array.isArray(f.output.text) ? f.output.text.join(" ") : f.output.text) ? .indexOf("Traceback (most recent call last)") !== -1 ? (0, m.showErrorMessage)("Error", `Error in the notebook in the background. Check for the error in ${y}`) : (0, m.showDialog)({
-                                    body: `Done running the notebook in the background. Check the results in ${y}`,
-                                    buttons: [m.Dialog.okButton()]
-                                })
-                            } catch (f) {
-                                console.error(`Error running the notebook in the background ${f}`), (0, m.showErrorMessage)("Error", "Error running the notebook in the background")
+                    const r = async () => {
+                        const u = i.PageConfig.getOption("serverRoot"),
+                            h = a.path,
+                            y = `${a.path.split(".ipynb")[0]}-background-results.ipynb`;
+                        try {
+                            if (await a.save(), !n.sessionContext.session?.kernel) {
+                                (0, m.showErrorMessage)("Error", "Please select a kernel and try again!");
+                                return
                             }
-                        },
-                        c = new m.ToolbarButton({
-                            onClick: r,
-                            tooltip: "Run this notebook in background",
-                            icon: ms
-                        });
+                            const f = new ds(n.sessionContext);
+                            (0, m.showDialog)({
+                                body: `Running the notebook in the background. Check the results when it ends in ${y}`,
+                                buttons: [m.Dialog.okButton()]
+                            }), f.execute(`!papermill ${u}/${h} ${u}/${y}`), await f.future.done, String(Array.isArray(f.output.text) ? f.output.text.join(" ") : f.output.text)?.indexOf("Traceback (most recent call last)") !== -1 ? (0, m.showErrorMessage)("Error", `Error in the notebook in the background. Check for the error in ${y}`) : (0, m.showDialog)({
+                                body: `Done running the notebook in the background. Check the results in ${y}`,
+                                buttons: [m.Dialog.okButton()]
+                            })
+                        } catch (f) {
+                            console.error(`Error running the notebook in the background ${f}`), (0, m.showErrorMessage)("Error", "Error running the notebook in the background")
+                        }
+                    }, c = new m.ToolbarButton({
+                        onClick: r,
+                        tooltip: "Run this notebook in background",
+                        icon: ms
+                    });
                     return n.toolbar.insertItem(10, "backgroundRun", c), new st.DisposableDelegate(() => {
                         c.dispose()
                     })
@@ -4116,10 +4101,10 @@ Would you like to clear the workspace or keep waiting?`),
                         a.register({
                             name: `Quantum Lab ${t}`,
                             isLight: r,
-                            load: async() => {
+                            load: async () => {
                                 document.documentElement.classList.add(`theme-mode-${c}`, `theme-${u}`)
                             },
-                            unload: async() => {
+                            unload: async () => {
                                 document.documentElement.classList.remove(`theme-mode-${c}`, `theme-${u}`)
                             }
                         })
@@ -4162,7 +4147,7 @@ Would you like to clear the workspace or keep waiting?`),
                     url: j,
                     onMessage: V,
                     onError: L
-                } = B, G = (0, D.G)(), X = N(V), ae = N(L ? ? v.Z);
+                } = B, G = (0, D.G)(), X = N(V), ae = N(L ?? v.Z);
                 (0, i.useEffect)(() => {
                     const K = `${j}#${G}`;
                     let q;
@@ -4279,7 +4264,7 @@ Would you like to clear the workspace or keep waiting?`),
                 i = s(22751);
 
             function w(L) {
-                return L.liveDataEnabled ? ? !1
+                return L.liveDataEnabled ?? !1
             }
             const N = ["CREATING", "CREATED", "VALIDATING", "VALIDATED", "RUNNING", "QUEUED", "TRANSPILING", "TRANSPILED"],
                 x = ["Queued", "Running"];
@@ -4317,7 +4302,7 @@ Would you like to clear the workspace or keep waiting?`),
             }
 
             function Y(L, G) {
-                const X = G ? .time_taken;
+                const X = G?.time_taken;
                 if (!(0, i.Z)(X)) return {
                     isApproximate: !1,
                     time: X * 1e3
@@ -4330,12 +4315,12 @@ Would you like to clear the workspace or keep waiting?`),
             }
 
             function B(L) {
-                const G = L.summaryData ? .resultTime;
+                const G = L.summaryData?.resultTime;
                 if (!(0, i.Z)(G)) return G * 1e3
             }
 
             function j(L) {
-                return L ? ? "fairshare"
+                return L ?? "fairshare"
             }
 
             function V(L) {
