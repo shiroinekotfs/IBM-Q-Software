@@ -9,3 +9,5 @@ MANIFEST
 venv/
 *.vs*
 *.exe
+*.whl
+*.gz
