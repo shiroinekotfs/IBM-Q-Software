@@ -9,4 +9,3 @@ MANIFEST
 venv/
 *.vs*
 *.exe
-*.whl
