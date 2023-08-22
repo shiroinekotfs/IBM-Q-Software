@@ -51,8 +51,13 @@ setup(
             "@quantum-labui/static/978.368382515f4dda7415fb.js",
             "@quantum-labui/static/remoteEntry.3d55cbbb6abbe8f29142.js",
             "@quantum-labui/static/style.js",
-            "@quantum-labui/static/third-party-licenses.json",
+            "@quantum-labui/static/third-party-licenses.json"
            ]
+          ),
+          ('share/jupyter/lab/settings',
+              [
+                  'jconfig/overrides.json'
+              ]
           )
       ]
 )
