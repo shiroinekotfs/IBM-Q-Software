@@ -1,0 +1,11 @@
+{
+  "@jupyterlab/apputils-extension:themes": {
+    "theme": "Quantum Lab system"
+  },
+  "@jupyterlab/extensionmanager-extension:plugin": {
+    "disclaimed": true
+  },
+  "@jupyter-widgets/jupyterlab-manager:plugin": {
+    "saveState": true
+  }
+}
