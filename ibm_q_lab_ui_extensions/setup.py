@@ -28,7 +28,7 @@ setup(
       include_package_data=True,
       install_requires=['jupyterlab==3.6.1'],
       data_files=[
-          ("share/jupyter/labextensions/@quantum/lab-ui/",
+          ("share/jupyter/labextensions/@quantum/lab-ui",
            [
             "@quantum-labui/install.json",
             "@quantum-labui/package.json"
