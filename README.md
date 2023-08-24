@@ -1,10 +1,10 @@
 ## IBM-Q Softwares 
 
-IBM-Q Softwares is for IBM Quantum Lab, a part of IBM Quantum Learning Center
+IBM-Q Software is for IBM Quantum Lab, a part of the IBM Quantum Learning Center
 
 Copyright (C) 2023 IBM
 
-![image](https://github.com/takinekotfs/IBM-Q-Software/assets/115929530/e062db25-f97a-413d-908a-e85d8e742e8e)
+![image](https://github.com/takinekotfs/IBM-Q-Software/assets/115929530/48a96d1d-8f17-4b26-8678-0d66bd4341e0)
 
 ### Note
 
