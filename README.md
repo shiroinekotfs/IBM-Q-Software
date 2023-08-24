@@ -1,4 +1,4 @@
-## IBM-Q Softwares 
+## IBM-Q Software
 
 IBM-Q Software is for IBM Quantum Lab, a part of the IBM Quantum Learning Center
 
