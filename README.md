@@ -22,12 +22,6 @@ pip3 install matplotlib pylatexenc seaborn
 
 ## Run the Docker Image
 
-For the Windows container, we're using Windows Server 2022 LTSC (nanoserver) to provide Jupyter Lab service. To run it, use the command
-
-```cmd
-docker run -p 8888:8888 systakineko/ibm-q-lab:ltsc2022-amd64
-```
-
 For Linux container, using this command to run Jupyter Lab
 
 ```cmd
