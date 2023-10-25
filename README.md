@@ -25,5 +25,5 @@ pip3 install matplotlib pylatexenc seaborn
 For Linux container, using this command to run Jupyter Lab
 
 ```cmd
-docker run -p 8888:8888 shiroineko/ibm-q-lab:linux-amd64
+docker run -p 8888:8888 shiroinekotfs/ibm-q-lab:linux-amd64
 ```
