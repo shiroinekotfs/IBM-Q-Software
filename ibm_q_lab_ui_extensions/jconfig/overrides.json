@@ -1,6 +1,6 @@
 {
   "@jupyterlab/apputils-extension:themes": {
-    "theme": "Quantum Lab system"
+    "theme": "Research Labs System"
   },
   "@jupyterlab/extensionmanager-extension:plugin": {
     "disclaimed": true
