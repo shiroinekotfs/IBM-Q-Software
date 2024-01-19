@@ -26,7 +26,7 @@ setup(
       packages=['ibm_q_lab_server_extension'],
       keywords=['Jupyter', 'JupyterLab', 'JupyterLab3'],
       include_package_data=True,
-      install_requires=['jupyterlab==3.6.1', 'jupyter-server==2.7.2'],
+      install_requires=['jupyterlab==3.6.7', 'jupyter-server==2.7.2'],
       data_files=[
           ("share/jupyter/labextensions/@quantum/lab-server",
            [
