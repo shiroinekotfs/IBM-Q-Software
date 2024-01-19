@@ -26,7 +26,7 @@ setup(
       packages=['ibm_quantum_widgets'],
       keywords=['Jupyter', 'JupyterLab', 'JupyterLab3'],
       include_package_data=True,
-      install_requires=['jupyterlab==3.6.1', 'ipywidgets>=7.0.0', 'qiskit>=0.38.0'],
+      install_requires=['jupyterlab==3.6.7', 'ipywidgets>=7.0.0', 'qiskit>=0.38.0'],
       data_files=[
           ("share/jupyter/labextensions/@quantum/lab-widgets",
            [
