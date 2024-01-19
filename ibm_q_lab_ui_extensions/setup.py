@@ -26,7 +26,7 @@ setup(
       packages=['ibm_q_lab_ui_extensions'],
       keywords=['Jupyter', 'JupyterLab', 'JupyterLab3'],
       include_package_data=True,
-      install_requires=['jupyterlab==3.6.1'],
+      install_requires=['jupyterlab==3.6.7'],
       data_files=[
           ("share/jupyter/labextensions/@quantum/lab-ui",
            [
