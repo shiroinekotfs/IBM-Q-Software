@@ -1,2 +1,2 @@
 setuptools>=20.3
-jupyterlab==3.6.1
+jupyterlab==4.0.11
